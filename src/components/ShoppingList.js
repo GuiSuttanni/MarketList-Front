@@ -1,19 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import axios from '../services/shoppingListService';
 import Item from './Item';
-import '../styles/ShoppingList.css';
+import '../styles/ShoppingList.css'
 
-function ShoppingList() {
+function ShoppingList({ houseCode }) {
   const [items, setItems] = useState([]);
   const [text, setText] = useState('');
 
   useEffect(() => {
-    axios.getItems().then(setItems);
-  }, []);
+    if (houseCode) {
+        axios.getItems(houseCode).then(setItems).catch(console.error);
+    }
+  }, [houseCode]);
 
   const addItem = () => {
     if (text.trim()) {
-      axios.addItem({ text }).then((newItem) => {
+      axios.addItem(houseCode, { text }).then((newItem) => {
         setItems([...items, newItem]);
         setText('');
       });
@@ -22,29 +24,29 @@ function ShoppingList() {
 
   const updateItem = (id, newText) => {
     if (newText.trim()) {
-      axios.updateItem(id, { text: newText }).then(() => {
+      axios.updateItem(houseCode, id, { text: newText }).then(() => {
         setItems(items.map((item) => (item.id === id ? { ...item, text: newText } : item)));
       });
     }
   };
 
   const deleteItem = (id) => {
-    axios.deleteItem(id).then(() => {
+    axios.deleteItem(houseCode, id).then(() => {
       setItems(items.filter((item) => item.id !== id));
     });
   };
 
   return (
     <div className="shopping-list-container">
-      <h1>Shopping List</h1>
+      <h1>Lista de Compras</h1>
       <div className="input-group">
         <input
           className="text-input"
-          placeholder="Add an item..."
+          placeholder="Adicionar um item..."
           value={text}
           onChange={(e) => setText(e.target.value)}
         />
-        <button className="add-button" onClick={addItem}>Add</button>
+        <button className="add-button" onClick={addItem}>Adicionar</button>
       </div>
       <ul className="items-list">
         {items.map((item) => (

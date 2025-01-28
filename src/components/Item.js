@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../styles/Item.css'; // Import styles
+import '../styles/Item.css';
 
 function Item({ item, onUpdate, onDelete }) {
   const [isEditing, setIsEditing] = useState(false);
@@ -21,15 +21,15 @@ function Item({ item, onUpdate, onDelete }) {
             value={newText}
             onChange={(e) => setNewText(e.target.value)}
           />
-          <button className="save-button" onClick={handleUpdate}>Save</button>
+          <button className="save-button" onClick={handleUpdate}>Salvar</button>
         </>
       ) : (
         <>
           <span className="item-text">{item.text}</span>
-          <button className="edit-button" onClick={() => setIsEditing(true)}>Edit</button>
+          <button className="edit-button" onClick={() => setIsEditing(true)}>Editar</button>
         </>
       )}
-      <button className="delete-button" onClick={() => onDelete(item.id)}>Delete</button>
+      <button className="delete-button" onClick={() => onDelete(item.id)}>Excluir</button>
     </li>
   );
 }
