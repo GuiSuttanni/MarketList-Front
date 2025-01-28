@@ -1,0 +1,41 @@
+.item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .item-text {
+    flex: 1;
+  }
+  
+  .edit-input {
+    flex: 1;
+    padding: 5px;
+    margin-right: 10px;
+  }
+  
+  .edit-button,
+  .save-button,
+  .delete-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    margin-left: 5px;
+    cursor: pointer;
+  }
+  
+  .edit-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .delete-button {
+    background-color: #dc3545;
+  }
+  
+  .delete-button:hover {
+    background-color: #c82333;
+  }
