@@ -26,8 +26,6 @@ body, html {
 }
 
 .login-container, .shopping-list-container {
-  width: 100%;
-  max-width: 100%;
   box-sizing: border-box;
 }
 
