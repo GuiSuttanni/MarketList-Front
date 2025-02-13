@@ -4,15 +4,16 @@ const API_URL = 'https://marketlist-back.onrender.com/api/shopping-list';
 
 export default {
   getItems: (houseCode) =>
-    axios.get(`${API_URL}?houseCode=${houseCode}`).then((res) => res.data),
+    axios.get(`${API_URL}?houseCode=${houseCode.toLowerCase()}`).then((res) => res.data),
   addItem: (houseCode, item) =>
-    axios.post(`${API_URL}`, { houseCode, ...item }).then((res) => res.data),  
+    axios.post(`${API_URL}`, { houseCode: houseCode.toLowerCase(), ...item }).then((res) => res.data),
   updateItem: (houseCode, id, item) =>
-    axios.put(`${API_URL}/${houseCode}/${id}`, item).then((res) => res.data),
+    axios.put(`${API_URL}/${houseCode.toLowerCase()}/${id}`, item).then((res) => res.data),
   deleteItem: (houseCode, id) =>
-    axios.delete(`${API_URL}/${houseCode}/${id}`),
+    axios.delete(`${API_URL}/${houseCode.toLowerCase()}/${id}`),
   verifyHouse: (houseCode) =>
-    axios.get(`${API_URL}/house/${houseCode}`).then((res) => res.data.exists),
+    axios.get(`${API_URL}/house/${houseCode.toLowerCase()}`).then((res) => res.data.exists),
   registerHouse: (houseCode) =>
-    axios.post(`${API_URL}/house`, { houseCode }).then((res) => res.data),
+    axios.post(`${API_URL}/house`, { houseCode: houseCode.toLowerCase() }).then((res) => res.data),
 };
+

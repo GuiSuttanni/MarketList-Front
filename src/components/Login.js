@@ -33,8 +33,8 @@ function Login({ onLogin }) {
         onChange={(e) => setHouseCode(e.target.value)}
       />
       <div className="button-group">
-        <button onClick={handleLogin}>Entrar</button>
         <button onClick={handleRegister}>Registrar</button>
+        <button onClick={handleLogin}>Entrar</button>
       </div>
     </div>
   );

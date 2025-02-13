@@ -26,10 +26,10 @@ function Item({ item, onUpdate, onDelete }) {
       ) : (
         <>
           <span className="item-text">{item.text}</span>
-          <button className="edit-button" onClick={() => setIsEditing(true)}>Editar</button>
+          <button className="edit-button" onClick={() => setIsEditing(true)}><i className="fas fa-edit"></i></button>
         </>
       )}
-      <button className="delete-button" onClick={() => onDelete(item.id)}>Excluir</button>
+      <button className="delete-button" onClick={() => onDelete(item.id)}><i className="fas fa-trash"></i></button>
     </li>
   );
 }
