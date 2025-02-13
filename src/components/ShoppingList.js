@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import axios from '../services/shoppingListService';
 import Item from './Item';
-import '../styles/ShoppingList.css'
+import '../styles/ShoppingList.css';
 
-function ShoppingList({ houseCode }) {
+function ShoppingList({ houseCode, onLogout }) {
   const [items, setItems] = useState([]);
   const [text, setText] = useState('');
 
   useEffect(() => {
     if (houseCode) {
-        axios.getItems(houseCode).then(setItems).catch(console.error);
+      axios.getItems(houseCode).then(setItems).catch(console.error);
     }
   }, [houseCode]);
 
@@ -38,6 +38,9 @@ function ShoppingList({ houseCode }) {
 
   return (
     <div className="shopping-list-container">
+      <div className="logout-container">
+        <button onClick={onLogout} className="logout-button">Sair</button>
+      </div>
       <h1>Lista de Compras</h1>
       <div className="input-group">
         <input

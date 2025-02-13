@@ -8,12 +8,15 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  overflow-x: hidden; /* Evita a barra de rolagem horizontal */
 }
 
 .app-container {
   width: 100%;
   max-width: 500px;
-  margin: 20px;
+  margin: 0 auto; /* Centraliza o container */
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 .centered-container {
@@ -21,6 +24,9 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 20px;
+  width: 100%;
+  max-width: 100%; /* Garante que não ultrapasse a largura da viewport */
+  box-sizing: border-box;
 }
 
 @media (max-width: 480px) {
@@ -31,9 +37,4 @@ body {
   .add-button {
     width: 80%;
   }
-
-  .logout-button {
-    margin-top: 10px;
-  }
 }
-  

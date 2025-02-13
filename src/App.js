@@ -20,8 +20,7 @@ function App() {
     <div className="app-container">
       {houseCode ? (
         <div className="centered-container">
-          <button onClick={handleLogout} className="logout-button">Sair</button>
-          <ShoppingList houseCode={houseCode} />
+          <ShoppingList houseCode={houseCode} onLogout={handleLogout} />
         </div>
       ) : (
         <div className="centered-container">
