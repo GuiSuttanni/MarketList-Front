@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:5000/api/shopping-list';
+const API_URL = 'https://marketlist-back.onrender.com/api/shopping-list';
 
 export default {
   getItems: (houseCode) =>
