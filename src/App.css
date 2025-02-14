@@ -8,7 +8,7 @@ body, html {
   justify-content: center;
   align-items: center;
   background: #f4f4f9;
-  overflow-x: hidden; /* Evita a barra de rolagem horizontal */
+  overflow-x: hidden;
 }
 
 .app-container {
@@ -24,17 +24,17 @@ body, html {
 
 .centered-container {
   width: 100%;
-  max-width: 100%; /* Garante que não ultrapasse a largura da viewport */
+  max-width: 100%; 
   box-sizing: border-box;
 }
 
 .login-container, .shopping-list-container {
   box-sizing: border-box;
-  width: 100%; /* Garante que o conteúdo ocupe 100% da largura disponível */
+  width: 100%; 
 }
 
 .items-list {
-  max-height: calc(100vh - 250px); /* Ajuste conforme necessário */
+  max-height: calc(100vh - 250px); 
   overflow-y: auto;
 }
 

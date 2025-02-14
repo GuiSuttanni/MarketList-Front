@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'https://marketlist-back.onrender.com/api/shopping-list';
+const API_URL = process.env.REACT_APP_API_URL;
 
 export default {
   getItems: (houseCode) =>
@@ -16,4 +16,3 @@ export default {
   registerHouse: (houseCode) =>
     axios.post(`${API_URL}/house`, { houseCode: houseCode.toLowerCase() }).then((res) => res.data),
 };
-
