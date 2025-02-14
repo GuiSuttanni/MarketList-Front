@@ -41,7 +41,7 @@ Abra o navegador e acesse `http://localhost:3000`.
 4. Faça push para a branch (`git push origin feature/nova-feature`).
 5. Abra um Pull Request.
 
-4. **Telas**:
+## Telas
    ![image](https://github.com/user-attachments/assets/8aa08d64-25d8-4e57-af7c-eaa5df8d6fb1)
    ![image](https://github.com/user-attachments/assets/fc04d9d1-e8ab-4363-b3b4-567bb681e976)
 
